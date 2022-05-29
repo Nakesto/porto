@@ -1,5 +1,6 @@
 import { Button, Container, useColorMode, VStack } from '@chakra-ui/react'
 import Head from 'next/head'
+import Image from 'next/image'
 
 export default function Home() {
 
@@ -13,6 +14,7 @@ export default function Home() {
 
       <VStack height={'100vh'}>
         <Container maxW='100%' color='white'>
+          <Image src='/images/richie.jpg' alt='Vincent' />
         </Container>
       </VStack>
     </div>
