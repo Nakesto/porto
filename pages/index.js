@@ -14,7 +14,7 @@ export default function Home() {
 
       <VStack height={'100vh'}>
         <Container maxW='100%' color='white'>
-          <Image src='/images/richie.jpg' alt='Vincent' />
+          <Image src='/richie.png' alt='Vincent' />
         </Container>
       </VStack>
     </div>
