@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Button, Container, useColorMode, VStack } from '@chakra-ui/react'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -14,7 +15,7 @@ export default function Home() {
 
       <VStack height={'100vh'}>
         <Container maxW='100%' color='white'>
-          <Image src='/richie.png' alt='Vincent' width='400px' height='400px' />
+          <img src='/richie.png' alt='Vincent' width='400px' height='400px' />
         </Container>
       </VStack>
     </div>
