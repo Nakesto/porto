@@ -1,22 +1,26 @@
-/* eslint-disable @next/next/no-img-element */
-import { Button, Container, useColorMode, VStack } from '@chakra-ui/react'
+import { Avatar, Box, Button, Container, Divider, Flex, Image, Text, useColorMode, VStack } from '@chakra-ui/react'
 import Head from 'next/head'
+import About from '../components/About'
+import Hero from '../components/Hero'
 
 export default function Home() {
+  const { colorMode } = useColorMode()
 
   return (
-    <div>
+    <>
       <Head>
-        <title>Vincent Page</title>
+        <title>Vincent | Portofolio</title>
         <meta name="description" content="My life, My Advanture" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <VStack height={'100vh'}>
-        <Container maxW='100%' color='white'>
-          <img src='/richie.png' alt='Vincent' width='400px' height='400px' />
+      <VStack>
+        <Container maxW='75%'>
+          <Hero colorMode={colorMode} />
+          <About colorMode={colorMode} />
         </Container>
       </VStack>
-    </div>
+
+    </ >
   )
 }

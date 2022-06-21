@@ -3,24 +3,32 @@ import { ChakraProvider, useColorMode } from '@chakra-ui/react'
 import { extendTheme } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 import { useEffect } from 'react';
-import Navbar from '../components/Navbar';
+import Layout from '../components/Layout';
+import "@fontsource/quicksand"
 
 const theme = extendTheme({
   styles: {
     global: (props) => ({
       body: {
-        bg: mode('white', 'black')(props),
+        bg: mode('#FFFCF2', '#1B262C')(props),
       }
     })
   },
   colors: {
-    primary: "#14213D",
-    secondary: "#FCA311",
-    tertiary: "#E5E5E5",
+    primary: "#C7EFCF",
+    secondary: "#FE5F55",
+    tertiary: "#7D869C",
+    quaternary: "#E1AA7D",
+    black: "#1B262C",
+    white: "#FFFCF2",
+  },
+  fonts: {
+    heading: `'Quicksand', sans-serif`,
+    body: `'Quicksand', sans-serif`,
   }
 })
 
-function ForceLightMode({ children }) {
+function ForceDarkMode({ children }) {
   const { colorMode, toggleColorMode } = useColorMode();
 
   useEffect(() => {
@@ -35,10 +43,11 @@ function ForceLightMode({ children }) {
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
-      <ForceLightMode>
-        <Navbar />
-        <Component {...pageProps} />
-      </ForceLightMode>
+      <ForceDarkMode>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ForceDarkMode>
     </ChakraProvider>
   )
 }
